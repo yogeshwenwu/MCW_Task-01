@@ -1,0 +1,10 @@
+^E:\MCW_C++_LEARNING\MCW_TASK-01\OUT\BUILD\DEFAULT\CMAKEFILES\FC2355593E99A6CBFF19CA541ACDDC9B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/MCW_C++_Learning/MCW_Task-01 -BE:/MCW_C++_Learning/MCW_Task-01/out/build/default --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/MCW_C++_Learning/MCW_Task-01/out/build/default/VectorAddition.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
