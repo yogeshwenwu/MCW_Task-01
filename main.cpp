@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include "scalarAddition.h"
-// #include "vectorAddition.h"
+#include "vectorAddition.h"
 using namespace std;
 
 int main(){
@@ -24,6 +24,18 @@ int main(){
 
     auto scalar_duration = chrono::duration_cast<chrono::nanoseconds>(end_scalar - start_scalar).count();
     cout << "Scalar addition took: " << scalar_duration << " nanoseconds" << endl;
+
+
+    for (int i = 0; i < SIZE; i++) {
+    c[i] = 0;
+    }
+
+    // Measuring the time taken for Vector Addition
+    auto start_vector = chrono::high_resolution_clock::now();
+    vAdd(a, b, c, SIZE);
+    auto end_vector = chrono::high_resolution_clock::now();
+    auto vector_duration = chrono::duration_cast<chrono::nanoseconds>(end_vector - start_vector).count();
+    cout << "Vector addition took: " << vector_duration << " nanoseconds" << endl;
 
     return 0;
 
